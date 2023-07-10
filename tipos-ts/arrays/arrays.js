@@ -24,3 +24,19 @@ console.log(juntaArrays(animais, animais2));
 //Usando Spread Operator
 let animais3;
 animais3 = [...animais, ...animais2];
+// Ordenando arrays com sort()
+const ordemCrescente = (array) => {
+    let array2 = array.sort(function (a, b) {
+        if (a > b) {
+            return 1;
+        }
+        if (b > a) {
+            return -1;
+        }
+        return 0;
+    });
+    return array2;
+};
+let arrayNumeros = [5, 10, 4, 68];
+const numsOrdenados = ordemCrescente(arrayNumeros);
+console.log(numsOrdenados);
