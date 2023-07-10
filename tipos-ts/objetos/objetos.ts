@@ -72,3 +72,36 @@ interface Filho extends Pai {
 const filho1: Filho = {nome: "Guilherme", sobrenome: "Chaves", idade: 17};
 console.log(" ");
 console.log(filho1);
+
+// Interseções
+type Cachorro = {
+    raca: string;
+}
+type Gato = {
+    raca: string;
+}
+
+type Animal = Cachorro & Gato;
+
+// Generic objects
+
+type Usuario = {
+    nome: string;
+    email: string;
+}
+type Admin = {
+    nome: string;
+    email: string;
+    admin: boolean;
+}
+
+const usuario1: Usuario = {nome: "Guilherme Chaves", email: "guichaves.com"};
+const adm1: Admin = {nome: "Guilherme Chaves", email: "guichaves.com", admin: true};
+
+// Esta função aceitará qualquer type como parâmetro, esse T é convenção de uso para generics
+const acessarSistema = <T>(usuario: T) => { 
+    return usuario;
+}
+
+console.log(acessarSistema(usuario1));
+console.log(acessarSistema(adm1));

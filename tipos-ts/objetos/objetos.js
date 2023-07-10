@@ -32,3 +32,11 @@ mostraEmail({ nome: "Guilherme", email: "blabla@gmail.com" });
 const filho1 = { nome: "Guilherme", sobrenome: "Chaves", idade: 17 };
 console.log(" ");
 console.log(filho1);
+const usuario1 = { nome: "Guilherme Chaves", email: "guichaves.com" };
+const adm1 = { nome: "Guilherme Chaves", email: "guichaves.com", admin: true };
+// Esta função aceitará qualquer type como parâmetro, esse T é convenção de uso para generics
+const acessarSistema = (usuario) => {
+    return usuario;
+};
+console.log(acessarSistema(usuario1));
+console.log(acessarSistema(adm1));
