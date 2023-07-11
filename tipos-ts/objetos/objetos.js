@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // Objetos
 let pessoa1;
 pessoa1 = { nome: 'Guilherme Chaves', idade: 17 };

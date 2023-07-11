@@ -1,3 +1,5 @@
+export{};
+
 // Objetos
 let pessoa1: {
     nome: string;
