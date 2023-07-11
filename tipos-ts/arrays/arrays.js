@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // Arrays
 // Jeito 1
 let animais = ['Cachorro', 'Gato', 'CAVALO'];

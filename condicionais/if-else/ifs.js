@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const par = (numero) => {
     if (numero % 2 == 0) {
         return `${numero} é par!`;

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const flores = (flor) => {
     let flor1 = flor.toLowerCase();
     if (flor1[flor1.length - 1] != 's') {

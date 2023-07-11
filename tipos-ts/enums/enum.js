@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // Enum numérico - O jeito mais indicado de usar
 var Idioma;
 (function (Idioma) {

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // Tipo Any - Ele pode ser qualquer tipo do typescript
 // Com o any, o tipo não é verificado
 let a = 34;

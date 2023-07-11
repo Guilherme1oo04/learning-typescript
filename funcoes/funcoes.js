@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // Função nomeada
 function somarNumeros(a, b) {
     return a + b;

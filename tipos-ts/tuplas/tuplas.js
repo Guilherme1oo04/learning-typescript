@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // Tuplas
 let pessoa2;
 pessoa2 = ['Guilherme Chaves', 'Desenvolvedor FullStack', 17];

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 let contador = 1;
 while (contador <= 20) {
     if (contador % 5 == 0) {
