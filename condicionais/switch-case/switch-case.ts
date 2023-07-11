@@ -1,3 +1,5 @@
+export {};
+
 const flores = (flor: string) => {
     let flor1 = flor.toLowerCase();
     

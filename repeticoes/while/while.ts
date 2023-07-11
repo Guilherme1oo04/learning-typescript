@@ -1,3 +1,5 @@
+export {};
+
 let contador: number = 1;
 
 while (contador <= 20){

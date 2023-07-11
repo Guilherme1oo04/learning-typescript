@@ -1,3 +1,5 @@
+export {};
+
 // Arrays
 // Jeito 1
 let animais: string[] = ['Cachorro', 'Gato', 'CAVALO'];

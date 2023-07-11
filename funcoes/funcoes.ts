@@ -1,3 +1,5 @@
+export {};
+
 // Função nomeada
 function somarNumeros(a: number, b: number) {
     return a + b;

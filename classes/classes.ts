@@ -83,3 +83,27 @@ class Pessoa2 extends Estudante3{
 }
 const pessoa2 = new Pessoa2("Guilherme", 8, 17);
 console.log(pessoa2.info());
+
+
+// Readonly - Não permite que modifique depois de criar
+class Estudante4 {
+    readonly dataNascimento: Date;
+
+    constructor(dataNascimento: Date){
+        this.dataNascimento = dataNascimento;
+    }
+}
+const pessoa3 = new Estudante4(new Date(2006, 2, 6));
+
+// pessoa3.dataNascimento = new Date(2000, 2, 6); => Gera um erro porque o campo com readonly só permite que o valor seja atribuído uma vez
+console.log(pessoa3.dataNascimento);
+
+interface Estudante5 {
+    nome: string;
+    idade: number;
+}
+const pessoa4: Readonly<Estudante5> = {
+    nome: 'Guilherme',
+    idade: 17,
+}
+// pessoa4 usa a interface Estudante5 e é totalmente imutável, todos os campos

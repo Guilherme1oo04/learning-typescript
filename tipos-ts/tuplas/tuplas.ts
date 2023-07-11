@@ -1,3 +1,5 @@
+export {};
+
 // Tuplas
 let pessoa2: [string, string, number];
 pessoa2 = ['Guilherme Chaves', 'Desenvolvedor FullStack', 17];

@@ -1,3 +1,5 @@
+export {};
+
 // Enum numérico - O jeito mais indicado de usar
 enum Idioma {
     Portugues,

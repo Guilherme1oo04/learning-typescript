@@ -1,3 +1,5 @@
+export {};
+
 // O tipo unknown serve basicamente pra voltar ao js normal, sem definição de tipo
 // O tipo vai ser definido de acordo com os valores que a variável receber
 

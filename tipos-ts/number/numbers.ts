@@ -1,3 +1,5 @@
+export {};
+
 let numero: number = 5;
 
 // BigInt - Usado para números muito grandes
