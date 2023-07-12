@@ -70,3 +70,37 @@ const pessoa4 = {
     idade: 17,
 };
 // pessoa4 usa a interface Estudante5 e é totalmente imutável, todos os campos
+// Static - Usado para informar algo que pertence à classe em si e não a um objeto da classe criada
+class Funcionarios {
+    constructor(nome, funcao) {
+        this.nome = nome;
+        this.funcao = funcao;
+        Funcionarios.numeroFuncionarios++;
+    }
+    static qntFuncionarios() {
+        return Funcionarios.numeroFuncionarios;
+    }
+    info() {
+        return `Nome: ${this.nome}, Função: ${this.funcao}`;
+    }
+}
+Funcionarios.numeroFuncionarios = 0;
+// funcionario1 é um objeto da classe, mas ele não pode utilizar o método qntFuncionarios(), porque é um método estático, que nem a variável numeroFuncionarios, portanto só a classe em si pode utilizar
+const funcionario1 = new Funcionarios("Guilherme", "JavaScript Developer");
+console.log();
+console.log(Funcionarios.qntFuncionarios());
+class Cachorro {
+    constructor(nome, raca) {
+        this.nome = nome;
+        this.raca = raca;
+        Cachorro.qnt_cachorros_vendidos++;
+    }
+    get infoCachorro() {
+        return `O nome do cachorro é: ${this.nome}, ele é da raça: ${this.raca}`;
+    }
+}
+Cachorro.qnt_cachorros_vendidos = 0;
+const cachorro1 = new Cachorro("Balestrini", ['Buldogue']);
+console.log();
+console.log(cachorro1.infoCachorro);
+console.log(`Quantidade de cachorros vendida: ${Cachorro.qnt_cachorros_vendidos}`);
