@@ -104,3 +104,22 @@ const cachorro1 = new Cachorro("Balestrini", ['Buldogue']);
 console.log();
 console.log(cachorro1.infoCachorro);
 console.log(`Quantidade de cachorros vendida: ${Cachorro.qnt_cachorros_vendidos}`);
+// Classes abstratas - elas são basicamente uma estrutura padrão que as classes filhas terão que seguir, não instanciadas no código
+class Animal {
+    constructor(nome) {
+        this.nome = nome;
+    }
+    move(distancia) {
+        console.log(`${this.nome} moveu-se ${distancia} metros.`);
+    }
+}
+class Gato extends Animal {
+    som() {
+        console.log(`${this.nome} miando...`);
+    }
+}
+// Neste exemplo a classe Gato segue a estrutura padrão da classe Animal, mudando somente o que a função abstrata som() irá fazer
+const gato1 = new Gato("Folgado");
+console.log();
+gato1.move(10);
+gato1.som();
