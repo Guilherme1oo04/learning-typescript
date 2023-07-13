@@ -71,3 +71,41 @@ class Cachorro implements Animal{
 console.log();
 const cachorro1 = new Cachorro("Igor3k", 30);
 cachorro1.comer("Vape");
+
+// Heranças de interfaces
+interface Pessoa1 {
+    nome: string,
+}
+interface Pessoa2 {
+    idade: number,
+}
+
+interface Pessoa3 extends Pessoa1, Pessoa2 {
+    altura: number,
+}
+
+const pessoa: Pessoa3 = {
+    nome: "Gustavin7327",
+    idade: 15,
+    altura: 1.72,
+}
+console.log();
+console.log(pessoa);
+
+// Omit - é usado para omitir o tipo de alguma propriedade herdada de outra interface
+interface Curso {
+    id: number,
+    curso: string,
+}
+interface Materia extends Omit<Curso, 'id'> {
+    id: string,
+    materia: string,
+}
+// Omit foi usado acima para permitir que o id fosse criado novamente
+
+// Uso do "|" para permitir mais de algum valor, permitindo escolher entre um ou outro
+interface Salarios {
+    id: number,
+    valor: number | string,
+}
+// Tanto number quanto string serão aceitos em valor

@@ -38,3 +38,11 @@ class Cachorro {
 console.log();
 const cachorro1 = new Cachorro("Igor3k", 30);
 cachorro1.comer("Vape");
+const pessoa = {
+    nome: "Gustavin7327",
+    idade: 15,
+    altura: 1.72,
+};
+console.log();
+console.log(pessoa);
+// Tanto number quanto string serão aceitos em valor
