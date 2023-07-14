@@ -31,3 +31,33 @@ const formataData = (valor) => {
     }
     return new Date(valor).toUTCString;
 };
+class Peixe {
+    constructor(grupo, corPeixe) {
+        this.grupo = grupo;
+        this.corPeixe = corPeixe;
+    }
+}
+class Passaro {
+    constructor(grupo, corPena) {
+        this.grupo = grupo;
+        this.corPena = corPena;
+    }
+}
+const mover = (animal) => {
+    if ("corPeixe" in animal) {
+        console.log(`${animal.grupo} nadam.`);
+    }
+    else if ("corPena" in animal) {
+        console.log(`${animal.grupo} voam.`);
+    }
+};
+console.log();
+mover(new Passaro("Pássaros", "Azul"));
+mover(new Peixe("Peixes", "Azul"));
+// O "As" é usado para converter uma variável de um tipo para outro, o as não realiza uma conversão real do valor em tempo de execução. Ele apenas informa ao compilador que você está tratando o valor como um tipo específico
+console.log();
+const num = "50407";
+const numString = num;
+console.log(numString.split("0"));
+const dataNasc = '06/02/2006';
+const idade = 17;
