@@ -102,7 +102,95 @@ type DataNascimento = string;
 type Idade = number;
 
 // Utilizando o "T" pra informar que o tipo é genérico e verificando se o tipo é number ou string
-type infoPessoa<T> = T extends number ? number : string;
+type infoPessoa<T> = T extends number ? Idade : DataNascimento;
 
 const dataNasc: infoPessoa<DataNascimento> = '06/02/2006';
 const idade: infoPessoa<Idade> = 17;
+
+
+type arquivosPermitidos = "mp3" | "wav";
+
+const formataAudio = (audio: arquivosPermitidos) => {
+    console.log(audio);
+}
+// formataAudio("mp4"); => Erro porque esse tipo não é uma das condições que pode ser recebida
+formataAudio("wav");
+
+
+// Mapped types - permite criar novos tipos com base em um tipo existente. Eles permitem que você itere sobre as propriedades de um tipo e as modifique de acordo com suas necessidades
+
+// Neste exemplo todos os parâmetros de Pessoa2 são recriados os mudando para opcionais
+type Pessoa2 = {
+    nome: string;
+    idade: number;
+    email: string;
+}
+type Pessoa2Opcional = {
+    [K in keyof Pessoa2]?: Pessoa2[K];
+}
+
+// Neste exemplo o ForIn de CarroOpcional verifica se "C" é "marca", se for ele transforma em um parâmetro obrigatório, se não ele torna opcional dando a opção de ser undefined
+type Carro = {
+    marca: string;
+    ano: number;
+    cor: string;
+}
+type CarroOpcional = {
+    readonly [C in keyof Carro]?: C extends "marca" ? Carro[C] : Carro[C] | undefined;
+}
+
+
+// Satisfies Operator - é usado para verificar se um tipo é compatível com uma interface ou type. Ele permite verificar se um objeto possui todas as propriedades e métodos definidos em uma interface ou type específico
+interface Animal2 {
+    name: string;
+    age: number;
+    sound(): void;
+}
+class Dog {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  sound() {
+    console.log("Woof!");
+  }
+}
+
+class Cat {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  sound() {
+    console.log("Meow!");
+  }
+}
+
+const makeSound = (animal: Animal2) => {
+    animal.sound();
+}
+
+const dog = new Dog("Buddy", 3);
+const cat = new Cat("Whiskers", 5);
+
+console.log();
+makeSound(dog); // Output: Woof!
+makeSound(cat); // Output: Meow!
+
+const verificaSatisfies = (animal: Animal2) => {
+    if (animal satisfies Animal2) {
+        console.log(animal);
+    } else {
+        console.log("Não é do tipo dog!")
+    }
+}
+verificaSatisfies(dog);
+verificaSatisfies(cat);

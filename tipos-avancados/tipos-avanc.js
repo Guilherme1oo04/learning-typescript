@@ -61,3 +61,44 @@ const numString = num;
 console.log(numString.split("0"));
 const dataNasc = '06/02/2006';
 const idade = 17;
+const formataAudio = (audio) => {
+    console.log(audio);
+};
+// formataAudio("mp4"); => Erro porque esse tipo não é uma das condições que pode ser recebida
+formataAudio("wav");
+class Dog {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    sound() {
+        console.log("Woof!");
+    }
+}
+class Cat {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    sound() {
+        console.log("Meow!");
+    }
+}
+const makeSound = (animal) => {
+    animal.sound();
+};
+const dog = new Dog("Buddy", 3);
+const cat = new Cat("Whiskers", 5);
+console.log();
+makeSound(dog); // Output: Woof!
+makeSound(cat); // Output: Meow!
+const verificaSatisfies = (animal) => {
+    if (animal) {
+        console.log(animal);
+    }
+    else {
+        console.log("Não é do tipo dog!");
+    }
+};
+verificaSatisfies(dog);
+verificaSatisfies(cat);
