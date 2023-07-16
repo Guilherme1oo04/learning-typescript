@@ -55,3 +55,85 @@ exibeAlgo(9);
 exibeAlgo("Opa!");
 exibeAlgo(true);
 // exibeAlgo(["oi", "opa"]); => erro, array de strings não é um dos tipos permitidos
+
+
+// Generics classes - são classes genéricas em que podemos definir o tipo que vamos utilizar
+
+class Lista<T> {
+    private elementos: T[];
+
+    constructor(){
+        this.elementos = [];
+    }
+
+    public verElementos(){
+        return this.elementos;
+    }
+
+    public adicionarItem(item: T){
+        this.elementos.push(item);
+    }
+
+    public removerItem(item: T){
+        this.elementos.splice(this.elementos.indexOf(item));
+    }
+}
+const listaNums = new Lista<number>();
+listaNums.adicionarItem(1);
+listaNums.removerItem(0);
+console.log(listaNums.verElementos());
+
+class Estudante<T, U> {
+    public nome: T;
+    public idade: U;
+
+    constructor(nome: T, idade: U){
+        this.nome = nome;
+        this.idade = idade
+    }
+}
+const estudante1 = new Estudante<string, number>("Guilherme", 17);
+
+
+// Generic interfaces - funciona como classes genéricas basicamente
+interface Informacoes<T, U> {
+    info1: T;
+    info2: U;
+}
+const informacoes1: Informacoes<string, string> = {
+    info1: "Guilherme",
+    info2: "Chaves"
+}
+
+// Criando uma função de fetch utilizando generics interfaces
+interface FetchResponse<T> {
+    data: T;
+    status: number;
+    statusText: string;
+    headers: Record<string, string>;
+}
+const fetchjson = async <T>(url: string): Promise<FetchResponse<T>> => {
+    const response = await fetch(url);
+    const headers: Record<string, string> = {};
+    response.headers.forEach((value, key) => {
+        headers[key] = value;
+    });
+
+    const data = await response.json();
+
+    return {
+        data: data as T,
+        status: response.status,
+        statusText: response.statusText,
+        headers
+    }
+}
+
+console.log();
+
+(async () => {
+    const response = await fetchjson<{title: string, userId: number, id: number, completed: boolean}>("https://jsonplaceholder.typicode.com/todos/1");
+
+    console.log(response.data.userId)
+    console.log(response.data.title);
+})();
